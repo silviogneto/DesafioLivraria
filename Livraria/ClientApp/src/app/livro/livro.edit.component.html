@@ -1,0 +1,47 @@
+<form (ngSubmit)="salvar(livro)">
+  <div class="form-group col-sm-6 col-md-4">
+    <label>Nome</label>
+    <input type="text"
+           name="nome"
+           class="form-control"
+           placeholder="Nome do Livro"
+           [(ngModel)]="livro.nome"
+           required
+           autofocus />
+  </div>
+  <div class="form-group col-sm-6 col-md-4">
+    <label>Autor(es)</label>
+    <input type="text"
+           name="autor"
+           class="form-control"
+           placeholder="Autor do Livro"
+           [(ngModel)]="livro.autor"
+           required />
+  </div>
+  <div class="form-group col-sm-6 col-md-4">
+    <label>Editora</label>
+    <input type="text"
+           name="editora"
+           class="form-control"
+           placeholder="Editora do Livro"
+           [(ngModel)]="livro.editora"
+           required/>
+  </div>
+  <div class="form-group col-sm-6 col-md-4">
+    <label>Ano de publicação</label>
+    <input type="number"
+           name="anoPublicacao"
+           class="form-control"
+           placeholder="Ano de publicação do Livro"
+           [(ngModel)]="livro.anoPublicacao" />
+  </div>
+  <hr />
+  <div class="form-group col-sm-12 col-md-12">
+    <a class="btn btn-default" [routerLink]="['/']">
+      <i class="glyphicon glyphicon-arrow-left"></i> Voltar
+    </a>
+    <button type="submit" class="btn btn-primary">
+      <i class="glyphicon glyphicon-floppy-disk"></i> Salvar
+    </button>
+  </div>
+</form>

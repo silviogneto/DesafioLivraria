@@ -1,0 +1,35 @@
+<h1>Livros</h1>
+
+<p *ngIf="!livros"><em>Carregando...</em></p>
+
+<div class="table-responsive">
+  <table class="table table-striped table-hover" *ngIf="livros">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nome</th>
+        <th>Autor</th>
+        <th>Editora</th>
+        <th>Ano Publicação</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let livro of livros">
+        <td>{{ livro.id }}</td>
+        <td>{{ livro.nome }}</td>
+        <td>{{ livro.autor }}</td>
+        <td>{{ livro.editora }}</td>
+        <td>{{ livro.anoPublicacao }}</td>
+        <td>
+          <button type="button" class="btn btn-default" (click)="editar(livro.id)"><i class="glyphicon glyphicon-pencil"></i></button>
+          <button type="button" class="btn btn-danger" (click)="deleteLivro(livro)"><i class="glyphicon glyphicon-trash"></i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<hr />
+<a class="btn btn-primary" [routerLink]="['/livros/edit']">
+  <i class="glyphicon glyphicon-plus"></i> Novo Livro
+</a>
